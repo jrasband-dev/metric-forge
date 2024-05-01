@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   version="1.1"
+   id="Layer_1"
+   width="800px"
+   height="800px"
+   viewBox="0 0 256 256"
+   enable-background="new 0 0 256 256"
+   xml:space="preserve"
+   sodipodi:docname="MetricForge.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="MetricForge.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1">
+	
+
+		
+	</defs><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.68375"
+   inkscape:cx="508.22669"
+   inkscape:cy="399.26874"
+   inkscape:window-width="1440"
+   inkscape:window-height="890"
+   inkscape:window-x="-6"
+   inkscape:window-y="-6"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer1" />
+<path
+   d="M 248,91.3 V 67 H 80 v 8 H 9 c 0,0 10.7,40.6 67.3,40.6 30.3,0 34.4,12.7 34.4,19.1 0,8.4 -5.1,21.9 -36.7,32.8 V 191 H 137.36362 201 v -22.9 c -23.4,-7.7 -38.7,-20.4 -38.7,-34.8 0,-22.7 37.8,-40.8 85.7,-42 z M 80,87 C 28,87 28,83 28,83 h 52 z m 8,-8 v -4 h 152 v 4 z"
+   id="path1"
+   sodipodi:nodetypes="cccccsscccccscccccccccc"
+   style="fill:#000000;fill-opacity:1" />
+<g
+   inkscape:groupmode="layer"
+   id="layer1"
+   inkscape:label="chart"><path
+     d="m 163.53326,86.316468 c -0.50638,-0.214891 -1.04271,-0.363185 -1.59894,-0.443338 -3.58589,-0.516732 -6.9242,1.962948 -7.44236,5.558713 -0.32349,2.244919 0.52812,4.496912 2.26352,5.963714 l -5.36728,11.353263 c -1.98915,-0.55024 -4.11999,-0.11718 -5.73527,1.17096 l -4.80428,-4.58583 c 1.94807,-3.03487 1.05891,-7.066695 -1.96608,-9.013339 -3.0249,-1.946632 -7.0667,-1.058911 -9.01334,1.966082 -1.66232,2.599517 -1.28037,6.000557 0.91254,8.161907 l -6.75479,9.72366 c -3.26812,-1.52541 -7.16293,-0.10948 -8.67846,3.16006 -1.51552,3.26953 -0.10947,7.16291 3.16006,8.67845 3.26953,1.51554 7.16292,0.10947 8.67846,-3.16006 1.20246,-2.57453 0.60014,-5.64231 -1.49521,-7.56649 l 6.70644,-9.66979 c 2.31336,1.18507 5.11685,0.86919 7.11152,-0.80031 l 4.7575,4.55884 c -2.02186,2.98364 -1.2377,7.04093 1.74604,9.06271 2.98365,2.02187 7.04093,1.23771 9.06272,-1.74604 2.02186,-2.98364 1.2377,-7.04092 -1.74604,-9.06271 -0.0369,-0.0255 -0.0737,-0.0512 -0.11062,-0.0768 l 5.25209,-11.11644 c 3.34773,1.39496 7.19445,-0.179996 8.59938,-3.526302 1.40504,-3.346384 -0.17989,-7.19454 -3.5376,-8.590936 z m -37.7756,36.422092 c -0.35498,2.46339 -2.65064,4.18077 -5.11404,3.82579 -2.47335,-0.35641 -4.18219,-2.64068 -3.82578,-5.11403 0.35641,-2.47335 2.64068,-4.1822 5.11402,-3.8258 2.47336,0.35642 4.18221,2.64069 3.8258,5.11404 z m 8.96142,-16.45263 c -2.47335,-0.35641 -4.1822,-2.64068 -3.82578,-5.11403 0.35641,-2.473351 2.64067,-4.182205 5.11402,-3.825791 2.47335,0.356413 4.18221,2.640682 3.8258,5.114031 -0.35642,2.47335 -2.65056,4.18079 -5.11404,3.82579 z m 19.43257,9.39084 c -0.35642,2.47335 -2.64068,4.18221 -5.11403,3.8258 -2.47335,-0.35642 -4.18221,-2.64069 -3.82579,-5.11404 0.35641,-2.47335 2.64068,-4.1822 5.11403,-3.82579 2.47335,0.35642 4.1822,2.64069 3.82579,5.11403 z m 6.18397,-18.779282 c -2.55278,-0.36786 -4.31402,-2.78135 -3.84251,-5.349615 0.4272,-2.331306 2.60919,-3.963643 4.96625,-3.715241 2.58704,0.27137 4.41493,2.643799 4.04708,5.196583 -0.35928,2.493186 -2.67764,4.227544 -5.17082,3.868273 z"
+     id="path1-4"
+     style="fill:#b1190b;fill-opacity:1;stroke:none;stroke-width:0.0939659;stroke-dasharray:none;stroke-opacity:1" /></g><text
+   xml:space="preserve"
+   style="font-weight:bold;font-size:17.0667px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';fill:#b1190b;fill-opacity:1;stroke:none;stroke-width:0.0801561;stroke-dasharray:none;stroke-opacity:1"
+   x="85.370415"
+   y="184.24339"
+   id="text3"><tspan
+     sodipodi:role="line"
+     id="tspan3"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.0667px;font-family:Lexend;-inkscape-font-specification:Lexend;fill:#b1190b;fill-opacity:1;stroke-width:0.0801561"
+     x="85.370415"
+     y="184.24339">Metric Forge</tspan></text></svg>

@@ -1,0 +1,10 @@
+.idea
+venv
+__pycache__
+dist
+build
+pandas_geojson.egg-info
+.ipynb_checkpoints
+venv-prod
+venv-dev
+.vscode
