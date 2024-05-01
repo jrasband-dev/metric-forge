@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="math-forge",
+    name="metric-forge",
     version="0.1.0",
     description="The Ultimate Metric Library",
     long_description=README,
@@ -22,7 +22,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.9",
     ],
-    packages=["math_forge"],
+    packages=["metric_forge"],
     include_package_data=True,
     install_requires=["polars"],
 )

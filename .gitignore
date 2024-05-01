@@ -8,3 +8,5 @@ pandas_geojson.egg-info
 venv-prod
 venv-dev
 .vscode
+
+metric_forge.egg-info
