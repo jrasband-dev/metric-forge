@@ -114,3 +114,6 @@ def customer_value_created(df:DataFrame
     cvc = df[importance_col]/10 * (df[satisfaction_after_col]/10 - df[satisfaction_before_col]/10)
     df = df.with_columns(cvc.alias('customer_value_created'))
     return df
+
+
+# def return_on_investment():
