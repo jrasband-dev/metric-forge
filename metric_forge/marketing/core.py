@@ -2,7 +2,7 @@ import polars as pl
 from polars.dataframe import DataFrame
 
 
-def cac(dataframe: DataFrame ,cost_column:str, customers_column:str) -> DataFrame:
+def customer_acquisition_cost(dataframe: DataFrame ,cost_column:str, customers_column:str) -> DataFrame:
     """
     Calculate Customer Acquisition Cost (CAC)
 
@@ -12,7 +12,7 @@ def cac(dataframe: DataFrame ,cost_column:str, customers_column:str) -> DataFram
     dataframe = dataframe.with_columns(cac.alias('CAC'))
     return dataframe
 
-def calculate_clv(revenue_per_customer, average_customer_lifetime):
+def customer_lifetime_value(revenue_per_customer, average_customer_lifetime):
     """
     Calculate Customer Lifetime Value (CLV)
     """
@@ -20,28 +20,28 @@ def calculate_clv(revenue_per_customer, average_customer_lifetime):
     return clv
 
 
-def calculate_conversion_rate(num_conversions, num_visitors):
+def conversion_rate(num_conversions, num_visitors):
     """
     Calculate Conversion Rate
     """
     conversion_rate = (num_conversions / num_visitors) * 100
     return conversion_rate
 
-def calculate_ctr(num_clicks, num_impressions):
+def click_through_rate(num_clicks, num_impressions):
     """
     Calculate Click-Through Rate (CTR)
     """
     ctr = (num_clicks / num_impressions) * 100
     return ctr
 
-def calculate_cpc(total_cost, num_clicks):
+def cost_per_click(total_cost, num_clicks):
     """
     Calculate Cost per Click (CPC)
     """
     cpc = total_cost / num_clicks
     return cpc
 
-def calculate_churn_rate(num_customers_lost, total_customers_beginning):
+def customer_churn_rate(num_customers_lost, total_customers_beginning):
     """
     Calculate Customer Churn Rate
     """
