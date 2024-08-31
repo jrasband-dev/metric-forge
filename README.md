@@ -27,7 +27,6 @@ install the package via pip
 pip install metric-forge
 ```
 
-
 ## Ecommerce
 You can use Ecommerce Metrics in two different ways:
 * With Polars
