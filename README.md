@@ -1,6 +1,6 @@
 # Metric Forge
 
-<img src="static/metric-forge2.svg" alt="Description of the image" width="300" height="300">
+<img src="https://raw.githubusercontent.com/jrasband-dev/metric-forge/fb6a5ed63c35eda1443c3e6cedd9b4f4b18d5e41/static/metric-forge2.svg" alt="Description of the image" width="300" height="300">
 
 Metric Forge is your ultimate toolkit for measuring and evaluating performance across various business domains.
 
@@ -27,6 +27,7 @@ install the package via pip
 pip install metric-forge
 ```
 
+
 ## Ecommerce
 You can use Ecommerce Metrics in two different ways:
 * With Polars
@@ -41,6 +42,19 @@ import polars as pl
 data = pl.read_csv('datasets/ecommerce_metrics.csv')
 data.head()
 ```
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 15)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td></tr></tbody></table></div>
+
+
 
 #### Customer Acquisition Cost
 
