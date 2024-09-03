@@ -1,6 +1,6 @@
 # Metric Forge
 
-<img src="static/metric-forge2.svg" alt="Description of the image" width="300" height="300">
+<img src="https://raw.githubusercontent.com/jrasband-dev/metric-forge/fb6a5ed63c35eda1443c3e6cedd9b4f4b18d5e41/static/metric-forge2.svg" alt="Description of the image" width="300" height="300">
 
 Metric Forge is your ultimate toolkit for measuring and evaluating performance across various business domains.
 
@@ -27,18 +27,6 @@ install the package via pip
 pip install metric-forge
 ```
 
-    Collecting metric-forge
-      Downloading metric_forge-0.1.0-py3-none-any.whl (2.3 kB)
-    Requirement already satisfied: polars in c:\users\jr2sw\desktop\repositories\jrasband-dev\metric-forge\venv-dev\lib\site-packages (from metric-forge) (0.20.23)
-    Installing collected packages: metric-forge
-    Successfully installed metric-forge-0.1.0
-    Note: you may need to restart the kernel to use updated packages.
-    
-
-    
-    [notice] A new release of pip is available: 23.1.2 -> 24.2
-    [notice] To update, run: python.exe -m pip install --upgrade pip
-    
 
 ## Ecommerce
 You can use Ecommerce Metrics in two different ways:
@@ -54,7 +42,6 @@ import polars as pl
 data = pl.read_csv('datasets/ecommerce_metrics.csv')
 data.head()
 ```
-
 
 
 
