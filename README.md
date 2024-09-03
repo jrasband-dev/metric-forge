@@ -59,43 +59,127 @@ data.head()
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.customer_acquisition_cost('cost_of_acquisition', 'new_customers'))
+data.with_columns(pl.col('*').forge_ecommerce.customer_acquisition_cost('cost_of_acquisition', 'new_customers'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>customer_acquisition_cost</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>56.547661</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>80.072112</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>236.296557</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>33.142093</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>70.54263</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>178.485526</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>38.530635</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>225.017992</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>81.444097</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>31.300858</td></tr></tbody></table></div>
+
+
 
 #### Average Order Value
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.average_order_value('total_revenue', 'number_of_orders'))
+data.with_columns(pl.col('*').forge_ecommerce.average_order_value('total_revenue', 'number_of_orders'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>average_order_value</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>88.248246</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>158.895324</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>94.405666</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>124.142202</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>94.937575</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>206.996386</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>114.819084</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>148.594413</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>99.920248</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>195.466736</td></tr></tbody></table></div>
+
+
 
 #### Cart Abandonment Rate
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.cart_abandonment_rate('carts_created', 'completed_purchases'))
+data.with_columns(pl.col('*').forge_ecommerce.cart_abandonment_rate('carts_created', 'completed_purchases'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>cart_abandonment_rate</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>27.628238</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>5.64409</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>35.537742</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>43.861437</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>20.61447</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>45.758123</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>29.367089</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>16.375</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>39.401496</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>49.823944</td></tr></tbody></table></div>
+
+
 
 #### Return on Advertising Spend
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.return_on_advertising_spend('revenue_from_ads', 'advertising_spend'))
+data.with_columns(pl.col('*').forge_ecommerce.return_on_advertising_spend('revenue_from_ads', 'advertising_spend'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>return_on_advertising_spend</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>15.088353</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>4.932621</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>7.833861</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>8.59255</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>18.172438</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>4.721303</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>4.200362</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>1.947612</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>2.663196</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>1.609889</td></tr></tbody></table></div>
+
+
 
 #### Conversion Rate
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.conversion_rate('num_conversions', 'num_visitors'))
+data.with_columns(pl.col('*').forge_ecommerce.conversion_rate('num_conversions', 'num_visitors'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>conversion_rate</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>2.280675</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>2.892562</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>3.649562</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>0.66172</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>1.121281</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>4.434389</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>3.284672</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>2.188131</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>8.342421</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>2.628044</td></tr></tbody></table></div>
+
+
 
 #### Customer Lifetime Value
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_ecommerce.customer_lifetime_value('revenue_per_customer', 'average_customer_lifetime'))
+data.with_columns(pl.col('*').forge_ecommerce.customer_lifetime_value('revenue_per_customer', 'average_customer_lifetime'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (12, 16)</small><table border="1" class="dataframe"><thead><tr><th>month</th><th>total_revenue</th><th>number_of_orders</th><th>cost_of_acquisition</th><th>new_customers</th><th>carts_created</th><th>completed_purchases</th><th>revenue_from_ads</th><th>advertising_spend</th><th>num_conversions</th><th>num_visitors</th><th>revenue_per_customer</th><th>average_customer_lifetime</th><th>num_customers_lost</th><th>total_customers_beginning</th><th>customer_lifetime_value</th></tr><tr><td>str</td><td>f64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td><td>f64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;2023-01&quot;</td><td>87454.011885</td><td>991</td><td>22958.350559</td><td>406</td><td>1969</td><td>1425</td><td>81339.957696</td><td>5390.910169</td><td>300</td><td>13154</td><td>202.427329</td><td>3.159364</td><td>239</td><td>3306</td><td>639.54169</td></tr><tr><td>&quot;2023-02&quot;</td><td>145071.430641</td><td>913</td><td>18736.874206</td><td>234</td><td>1506</td><td>1421</td><td>76875.083402</td><td>15585.037018</td><td>427</td><td>14762</td><td>116.173436</td><td>1.812245</td><td>124</td><td>4680</td><td>210.534716</td></tr><tr><td>&quot;2023-03&quot;</td><td>123199.394181</td><td>1305</td><td>28355.586842</td><td>120</td><td>1497</td><td>965</td><td>116505.482191</td><td>14872.037954</td><td>367</td><td>10056</td><td>384.265156</td><td>4.771414</td><td>177</td><td>4675</td><td>1833.488253</td></tr><tr><td>&quot;2023-04&quot;</td><td>109865.84842</td><td>885</td><td>14184.81582</td><td>428</td><td>1963</td><td>1102</td><td>106008.046381</td><td>12337.204368</td><td>132</td><td>19948</td><td>144.356328</td><td>3.395462</td><td>299</td><td>2972</td><td>490.156408</td></tr><tr><td>&quot;2023-05&quot;</td><td>65601.864044</td><td>691</td><td>18764.339456</td><td>266</td><td>1009</td><td>801</td><td>97258.809912</td><td>5351.995568</td><td>147</td><td>13110</td><td>275.734601</td><td>3.77914</td><td>296</td><td>3768</td><td>1042.039585</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>&quot;2023-08&quot;</td><td>136617.614577</td><td>660</td><td>33555.278842</td><td>188</td><td>1108</td><td>601</td><td>116872.977654</td><td>24754.388513</td><td>392</td><td>8840</td><td>290.148089</td><td>2.182535</td><td>280</td><td>3479</td><td>633.258286</td></tr><tr><td>&quot;2023-09&quot;</td><td>110111.501174</td><td>959</td><td>15990.213465</td><td>415</td><td>1975</td><td>1395</td><td>84633.082292</td><td>20148.99937</td><td>198</td><td>6028</td><td>325.310229</td><td>1.421977</td><td>239</td><td>3434</td><td>462.583676</td></tr><tr><td>&quot;2023-10&quot;</td><td>120807.25778</td><td>813</td><td>25427.033152</td><td>113</td><td>800</td><td>669</td><td>54839.926382</td><td>28157.521963</td><td>271</td><td>12385</td><td>378.206435</td><td>2.826138</td><td>274</td><td>2648</td><td>1068.863683</td></tr><tr><td>&quot;2023-11&quot;</td><td>52058.44943</td><td>521</td><td>27772.437066</td><td>341</td><td>2005</td><td>1215</td><td>56664.615513</td><td>21276.925638</td><td>459</td><td>5502</td><td>155.732582</td><td>1.873762</td><td>178</td><td>2317</td><td>291.805755</td></tr><tr><td>&quot;2023-12&quot;</td><td>146990.985216</td><td>752</td><td>11393.512382</td><td>364</td><td>1704</td><td>855</td><td>44874.024516</td><td>27873.991889</td><td>313</td><td>11910</td><td>341.766952</td><td>2.66604</td><td>170</td><td>3257</td><td>911.164293</td></tr></tbody></table></div>
+
+
 
 ## Product Development
 You can use Product Development Metrics in two different ways:
@@ -111,6 +195,20 @@ data = pl.read_csv('datasets/customer-value.csv')
 data
 ```
 
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 3)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score</th></tr><tr><td>str</td><td>i64</td><td>i64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td></tr><tr><td>&quot;Feature2&quot;</td><td>6</td><td>8</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td></tr></tbody></table></div>
+
+
+
 ### Underserved Customer Needs
 
 
@@ -118,20 +216,62 @@ data
 from metric_forge.product_development import *
 
 
-data.with_columns(pl.col('total_marketing_costs').forge_product_dev.opportunity_score(importance_col='importance_score',satisfaction_col='satisfaction_score'))
+data.with_columns(pl.col('*').forge_product_dev.opportunity_score(importance_col='importance_score',satisfaction_col='satisfaction_score'))
 
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 4)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score</th><th>opportunity_score</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td><td>9.0</td></tr><tr><td>&quot;Feature2&quot;</td><td>6</td><td>8</td><td>4.0</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td><td>5.0</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td><td>9.0</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td><td>6.0</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td><td>10.0</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td><td>5.0</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td><td>5.0</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td><td>10.0</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td><td>9.0</td></tr></tbody></table></div>
+
+
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_product_dev.customer_value_delivered(importance_col='importance_score',satisfaction_col='satisfaction_score'))
+data.with_columns(pl.col('*').forge_product_dev.customer_value_delivered(importance_col='importance_score',satisfaction_col='satisfaction_score'))
 
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 4)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score</th><th>customer_value_delivered</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td><td>0.56</td></tr><tr><td>&quot;Feature2&quot;</td><td>6</td><td>8</td><td>0.48</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td><td>0.63</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td><td>0.56</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td><td>0.36</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td><td>0.72</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td><td>0.63</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td><td>0.42</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td><td>0.72</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td><td>0.56</td></tr></tbody></table></div>
+
+
 
 
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_product_dev.opportunity_to_add_value(importance_col='importance_score',satisfaction_col='satisfaction_score'))
+data.with_columns(pl.col('*').forge_product_dev.opportunity_to_add_value(importance_col='importance_score',satisfaction_col='satisfaction_score'))
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 4)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score</th><th>opp_to_add_value</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td><td>0.24</td></tr><tr><td>&quot;Feature2&quot;</td><td>6</td><td>8</td><td>0.12</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td><td>0.07</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td><td>0.24</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td><td>0.24</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td><td>0.18</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td><td>0.07</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td><td>0.18</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td><td>0.18</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td><td>0.24</td></tr></tbody></table></div>
+
+
 
 
 ```python
@@ -141,12 +281,40 @@ data
 ```
 
 
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 4)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score_before</th><th>satisfaction_score_after</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>i64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td><td>9</td></tr><tr><td>&quot;Feature2&quot;</td><td>9</td><td>8</td><td>9</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td><td>8</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td><td>8</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td><td>8</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td><td>9</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td><td>8</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td><td>6</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td><td>8</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td><td>7</td></tr></tbody></table></div>
+
+
+
+
 ```python
-data.with_columns(pl.col('total_marketing_costs').forge_product_dev.customer_value_created(importance_col='importance_score'
+data.with_columns(pl.col('*').forge_product_dev.customer_value_created(importance_col='importance_score'
                        ,satisfaction_after_col='satisfaction_score_after'
                        ,satisfaction_before_col='satisfaction_score_before'))
 
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 5)</small><table border="1" class="dataframe"><thead><tr><th>feature_name</th><th>importance_score</th><th>satisfaction_score_before</th><th>satisfaction_score_after</th><th>customer_value_created</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>&quot;Feature1&quot;</td><td>8</td><td>7</td><td>9</td><td>0.16</td></tr><tr><td>&quot;Feature2&quot;</td><td>9</td><td>8</td><td>9</td><td>0.09</td></tr><tr><td>&quot;Feature3&quot;</td><td>7</td><td>9</td><td>8</td><td>-0.07</td></tr><tr><td>&quot;Feature4&quot;</td><td>8</td><td>7</td><td>8</td><td>0.08</td></tr><tr><td>&quot;Feature5&quot;</td><td>6</td><td>6</td><td>8</td><td>0.12</td></tr><tr><td>&quot;Feature6&quot;</td><td>9</td><td>8</td><td>9</td><td>0.09</td></tr><tr><td>&quot;Feature7&quot;</td><td>7</td><td>9</td><td>8</td><td>-0.07</td></tr><tr><td>&quot;Feature8&quot;</td><td>6</td><td>7</td><td>6</td><td>-0.06</td></tr><tr><td>&quot;Feature9&quot;</td><td>9</td><td>8</td><td>8</td><td>0.0</td></tr><tr><td>&quot;Feature10&quot;</td><td>8</td><td>7</td><td>7</td><td>0.0</td></tr></tbody></table></div>
+
+
 
 ## Finance
 
@@ -163,14 +331,35 @@ income.ebitda_margin()
 ```
 
 
+
+
+    0.5
+
+
+
+
 ```python
 income.earnings_per_share()
 ```
 
 
+
+
+    'Missing parameters: revenue, cogs, expenses, shares_outstanding'
+
+
+
+
 ```python
 income.net_profit_margin()
 ```
+
+
+
+
+    0.5
+
+
 
 ### Balance Sheet
 
@@ -179,12 +368,26 @@ income.net_profit_margin()
 BalanceSheet(assets=300000,total_liabilities=150000,equity=150000).check_balance()
 ```
 
+
+
+
+    'The balance equation is correct: Assets - Liabilities = Equity'
+
+
+
 ### Cash Flow
 
 
 ```python
 CashFlowStatement(operating_cash_flow=3000,capital_expenditures=4000).free_cash_flow()
 ```
+
+
+
+
+    -1000
+
+
 
 ## Mortgage
 
@@ -200,9 +403,30 @@ mortgage.calculate_monthly_payment()
 ```
 
 
+
+
+    2100.8622831967773
+
+
+
+
 ```python
 mortgage.generate_amortization_schedule()
 ```
+
+
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (360, 6)</small><table border="1" class="dataframe"><thead><tr><th>payment_number</th><th>payment_date</th><th>payment</th><th>interest_payment</th><th>principal_payment</th><th>principal_remaining</th></tr><tr><td>i64</td><td>str</td><td>f64</td><td>f64</td><td>f64</td><td>f64</td></tr></thead><tbody><tr><td>1</td><td>&quot;2023-10-01&quot;</td><td>2100.862283</td><td>1725.0</td><td>375.862283</td><td>359624.137717</td></tr><tr><td>2</td><td>&quot;2023-10-31&quot;</td><td>2100.862283</td><td>1723.198993</td><td>377.66329</td><td>359246.474427</td></tr><tr><td>3</td><td>&quot;2023-11-30&quot;</td><td>2100.862283</td><td>1721.389357</td><td>379.472927</td><td>358867.0015</td></tr><tr><td>4</td><td>&quot;2023-12-30&quot;</td><td>2100.862283</td><td>1719.571049</td><td>381.291234</td><td>358485.710266</td></tr><tr><td>5</td><td>&quot;2024-01-29&quot;</td><td>2100.862283</td><td>1717.744028</td><td>383.118255</td><td>358102.592011</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>356</td><td>&quot;2052-11-27&quot;</td><td>2100.862283</td><td>49.617632</td><td>2051.244651</td><td>8303.739506</td></tr><tr><td>357</td><td>&quot;2052-12-27&quot;</td><td>2100.862283</td><td>39.788752</td><td>2061.073531</td><td>6242.665975</td></tr><tr><td>358</td><td>&quot;2053-01-26&quot;</td><td>2100.862283</td><td>29.912774</td><td>2070.949509</td><td>4171.716466</td></tr><tr><td>359</td><td>&quot;2053-02-25&quot;</td><td>2100.862283</td><td>19.989475</td><td>2080.872808</td><td>2090.843657</td></tr><tr><td>360</td><td>&quot;2053-03-27&quot;</td><td>2100.862283</td><td>10.018626</td><td>2090.843657</td><td>1.4501e-8</td></tr></tbody></table></div>
+
+
 
 
 ```python
@@ -210,10 +434,29 @@ mortgage.calculate_principal_only_payment()
 ```
 
 
+
+
+    {'new_term_years': 24.14759462810461, 'time_saved_years': 5.85240537189539}
+
+
+
+
 ```python
 mortgage.refinance_assessment(RefinanceOption(new_loan_amount=350000,new_annual_interest_rate=5.25,new_term_years=30,associated_costs=5000))
 
 ```
+
+
+
+
+    {'Old Monthly Payment': 2100.8622831967773,
+     'New Monthly Payment': 1932.7129574966407,
+     'Monthly Savings': 168.14932570013661,
+     'Break-Even Point (months)': 29.735474579996712,
+     'Total Savings (over the loan term)': 55533.75725204917,
+     'Should Refinance': True}
+
+
 
 ## Web Traffic
 
@@ -227,9 +470,35 @@ data
 ```
 
 
+
+
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 8)</small><table border="1" class="dataframe"><thead><tr><th>total_duration</th><th>total_sessions</th><th>single_page_sessions</th><th>num_clicks</th><th>num_impressions</th><th>total_cost</th><th>exits</th><th>total_page_views</th></tr><tr><td>str</td><td>i64</td><td>i64</td><td>i64</td><td>i64</td><td>i64</td><td>i64</td><td>i64</td></tr></thead><tbody><tr><td>&quot;1200&quot;</td><td>10</td><td>2</td><td>100</td><td>1000</td><td>50</td><td>5</td><td>50</td></tr><tr><td>&quot;1500&quot;</td><td>15</td><td>3</td><td>150</td><td>1500</td><td>75</td><td>7</td><td>70</td></tr><tr><td>&quot;0&quot;</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td><td>20</td></tr><tr><td>&quot;2500&quot;</td><td>25</td><td>5</td><td>200</td><td>2000</td><td>100</td><td>10</td><td>100</td></tr><tr><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td><td>null</td></tr></tbody></table></div>
+
+
+
+
 ```python
-data.with_columns(pl.col('total_duration').forge_web_traffic.average_session_duration('total_duration', 'total_sessions'))
+data.with_columns(pl.col('*').forge_web_traffic.average_session_duration('total_duration', 'total_sessions'))
 ```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    Cell In[25], line 1
+    ----> 1 data.with_columns(pl.col('*').forge_web_traffic.average_session_duration('total_duration', 'total_sessions'))
+    
+
+    TypeError: WebTraffic_Polars.average_session_duration() takes 2 positional arguments but 3 were given
+
 
 
 ```python
