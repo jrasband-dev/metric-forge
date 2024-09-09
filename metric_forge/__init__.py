@@ -6,12 +6,13 @@ from .ecommerce import *
 
 
 __all__ = [
-    'IncomeStatement'
-    ,'BalanceSheet'
-    ,'CashFlowStatement'
+    'FinancialStatements'
     ,'ProductDevelopment_SVF'
     ,'ProductDevelopment_Polars'
     ,'Ecommerce_SVF'
     ,'Ecommerce_Polars'
-
+    ,'IncomeStatement_Polars'
+    ,'BalanceSheet_Polars'
+    ,'CashFlow_Polars'
+    ,'import_financials'
 ]
