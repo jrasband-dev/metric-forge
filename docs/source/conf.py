@@ -93,6 +93,7 @@ html_show_sourcelink = False
 static_assets_root = ""
 github_root = "https://github.com/jrasband-dev/metric-forge"
 web_root = "https://docs.metric-forge.com"
+asset_root = "https://raw.githubusercontent.com/jrasband-dev/metric-forge"
 
 # Specify version for version switcher dropdown menu
 git_ref = os.environ.get("METRIC_FORGE_VERSION", "main")
@@ -131,8 +132,8 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "image_light": f"{github_root}/static/metric-forge-black.png",
-        "image_dark": f"{github_root}/static/metric-forge-white.png",
+        "image_light": f"{asset_root}/static/metric-forge-black.png",
+        "image_dark": f"{asset_root}/static/metric-forge-white.png",
     },
     "switcher": {
         "json_url": f"{web_root}/api/python/dev/_static/version_switcher.json",
