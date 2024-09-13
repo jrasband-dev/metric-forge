@@ -93,7 +93,7 @@ html_show_sourcelink = False
 static_assets_root = ""
 github_root = "https://github.com/jrasband-dev/metric-forge"
 web_root = "https://docs.metric-forge.com"
-asset_root = "https://raw.githubusercontent.com/jrasband-dev/metric-forge"
+asset_root = "https://raw.githubusercontent.com/jrasband-dev/metric-forge/main"
 
 # Specify version for version switcher dropdown menu
 git_ref = os.environ.get("METRIC_FORGE_VERSION", "main")
