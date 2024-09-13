@@ -46,6 +46,7 @@ extensions = [
     "sphinx_favicon",
     "sphinx_reredirects",
     "sphinx_toolbox.more_autodoc.overloads",
+    "recommonmark"
 ]
 
 # Render docstring text in `single backticks` as code.
@@ -71,8 +72,9 @@ exclude_patterns = ["Thumbs.db", ".DS_Store"]
 overloads_location = ["bottom"]
 language = 'python'
 
+
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
@@ -108,27 +110,32 @@ switcher_version = version_match.group(1) if version_match is not None else "dev
 # ]
 
 html_theme_options = {
-    "external_links": [
-        {
-            "name": "User guide",
-            "url": f"{web_root}/",
-        },
-    ],
+    # "external_links": [
+    #     {
+    #         "name": "User guide",
+    #         "url": f"{web_root}/",
+    #     },
+    # ],
     "icon_links": [
         {
             "name": "GitHub",
             "url": github_root,
             "icon": "fa-brands fa-github",
         },
-        # {
-        #     "name": "Discord",
-        #     "url": "https://discord.gg/4UfP5cfBE7",
-        #     "icon": "fa-brands fa-discord",
-        # },
+        {
+            "name": "Pypi",
+            "url": "https://pypi.org/project/metric-forge/",
+            "icon": "fa-brands fa-python",
+        },
         {
             "name": "LinkedIn",
             "url": "https://www.linkedin.com/in/jayden-rasband-303449133/",
             "icon": "fa-brands fa-linkedin",
+        },
+        {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@polarsCodeAcademy",
+            "icon": "fa-brands fa-youtube",
         },
     ],
     "logo": {
@@ -213,10 +220,10 @@ def linkcode_resolve(domain: str, info: dict[str, Any]) -> str | None:
     linespec = f"#L{lineno}-L{lineno + len(source) - 1}" if lineno else ""
 
     conf_dir_path = Path(__file__).absolute().parent
-    polars_root = (conf_dir_path.parent.parent / "polars").absolute()
+    project_root = (conf_dir_path.parent.parent / "metric-forge").absolute()
 
-    fn = os.path.relpath(fn, start=polars_root)
-    return f"{github_root}/blob/{git_ref}/py-polars/polars/{fn}{linespec}"
+    fn = os.path.relpath(fn, start=project_root)
+    return f"{github_root}/blob/{git_ref}/metric-forge/{fn}{linespec}"
 
 
 def _minify_classpaths(s: str) -> str:
