@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="metric-forge",
-    version="0.2.1",
+    version="0.4.0",
     description="The Ultimate Metric Library",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,5 +21,5 @@ setup(
     classifiers=[],
     packages=["metric_forge"],
     include_package_data=True,
-    install_requires=["polars"],
+    install_requires=["polars","yfinance"],
 )
