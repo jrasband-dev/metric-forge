@@ -69,3 +69,26 @@ class CashFlow_Polars:
         operating_cash_flow_expr = pl.col(operating_cash_flow_column)
         current_liabilities_expr = pl.col(current_liabilities_column)
         return pl.when(current_liabilities_expr == 0).then(0.0).otherwise(operating_cash_flow_expr / current_liabilities_expr).alias('operating_cash_flow_ratio')
+
+
+@pl.api.register_expr_namespace("forge_finance")
+class Finance_Polars:
+    def __init__(self, expr: pl.Expr):
+        self._expr = expr
+
+
+    def commission_bps(self, revenue_column: str, bps_column: str) -> pl.Expr:
+        """
+        Calculate commission based on basis points (bps).
+        
+        Parameters:
+        - revenue_column (str): The column containing revenue or transaction value.
+        - bps_column (str): The column containing basis points (bps) for commission rate.
+        
+        Returns:
+        - pl.Expr: The calculated commission based on bps.
+        """
+        revenue_expr = pl.col(revenue_column)
+        bps_expr = pl.col(bps_column)
+        commission_rate_expr = bps_expr / 10000  # Convert basis points to percentage
+        return (revenue_expr * commission_rate_expr).alias('commission_bps')     

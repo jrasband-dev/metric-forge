@@ -10,4 +10,5 @@ __all__ = [
     ,'BalanceSheet_Polars'
     ,'CashFlow_Polars'
     ,'Finance_SVF'
+    ,'Finance_Polars'
 ]
