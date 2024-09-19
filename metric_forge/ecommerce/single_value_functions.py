@@ -1,29 +1,45 @@
 class Ecommerce_SVF:
-    def customer_acquisition_cost(cost: float, customers: int) -> float:
+    @staticmethod
+    def customer_acquisition_cost(cost: float
+                                  ,customers: int) -> float:
         """
         Calculate Customer Acquisition Cost (CAC) for single values.
 
-        Parameters:
-        cost (float): The total cost for acquiring customers.
-        customers (int): The number of customers acquired.
+        Parameters
+        ----------
+        cost
+            The total cost for acquiring customers.
+        customers
+            The number of customers acquired.
 
-        Returns:
-        float: The calculated CAC.
+        Returns
+        -------
+        float
+            The calculated CAC.
         """
         if customers == 0:
             return 0.0
         return cost / customers
-
+    
+    @staticmethod
     def average_order_value(total_revenue, number_of_orders):
         """
         Calculate the Average Order Value (AOV).
 
-        Parameters:
-        total_revenue (float): The total revenue generated.
-        number_of_orders (int): The total number of orders.
+        Parameters
+        ----------
 
-        Returns:
-        float: The average order value (AOV).
+        total_revenue
+            The total revenue generated.
+        number_of_orders
+            The total number of orders.
+
+        Returns
+        -------
+
+        float 
+
+            The average order value (AOV).
         """
         if number_of_orders == 0:
             return 0.0
@@ -33,12 +49,18 @@ class Ecommerce_SVF:
         """
         Calculate the Cart Abandonment Rate.
 
-        Parameters:
-        carts_created (int): The number of shopping carts created.
-        completed_purchases (int): The number of purchases completed.
+        Parameters
+        ----------
 
-        Returns:
-        float: The cart abandonment rate as a percentage.
+        carts_created
+            The number of shopping carts created.
+        completed_purchases
+            The number of purchases completed.
+
+        Returns
+        -------
+        float
+            The cart abandonment rate as a percentage.
         """
         if carts_created == 0:
             return 0.0
@@ -49,12 +71,18 @@ class Ecommerce_SVF:
         """
         Calculate the Return on Advertising Spend (ROAS).
 
-        Parameters:
-        revenue_from_ads (float): The revenue generated from ads.
-        advertising_spend (float): The total advertising spend.
+        Parameters
+        ----------
 
-        Returns:
-        float: The ROAS.
+        revenue_from_ads
+            The revenue generated from ads.
+        advertising_spend
+            The total advertising spend.
+
+        Returns
+        -------
+        float
+            The ROAS.
         """
         if advertising_spend == 0:
             return 0.0
