@@ -13,6 +13,17 @@ import warnings
 from pathlib import Path
 from typing import Any
 
+
+import logging
+
+# Configure the logger
+logging.basicConfig(
+    filename='docs.log',  # Log file name
+    level=logging.DEBUG,  # Log level
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Log message format
+)
+
+
 # import sphinx_autosummary_accessors
 
 # -- Path setup --------------------------------------------------------------
@@ -227,30 +238,13 @@ def linkcode_resolve(domain: str, info: dict[str, Any]) -> str | None:
 
 
 def _minify_classpaths(s: str) -> str:
-    # strip private polars classpaths, leaving the classname:
-    # * "pl.Expr" -> "Expr"
-    # * "polars.expr.expr.Expr" -> "Expr"
-    # * "polars.lazyframe.frame.LazyFrame" -> "LazyFrame"
-    # also:
-    # * "datetime.date" => "date"
-    s = s.replace("datetime.", "")
+    logging.debug(f'classpath: {s}')
     return re.sub(
-        pattern=r"""
-        ~?
-        (
-          (?:pl|
-            (?:polars\.
-              (?:_reexport|datatypes)
-            )
-          )
-          (?:\.[a-z.]+)?\.
-          ([A-Z][\w.]+)
-        )
-        """,
-        repl=r"\2",
+        pattern=r"metric_forge\.ecommerce\.([^.]+\.[^.]+)",  
+        repl=r"\1",  # Replace with just the captured part
         string=s,
-        flags=re.VERBOSE,
     )
+
 
 
 def process_signature(  # noqa: D103
@@ -262,6 +256,8 @@ def process_signature(  # noqa: D103
     sig: str,
     ret: str,
 ) -> tuple[str, str]:
+    logging.debug(f'process_sig: {sig}')
+    logging.debug(f'return_sig: {ret}')
     return (
         _minify_classpaths(sig) if sig else sig,
         _minify_classpaths(ret) if ret else ret,
@@ -269,6 +265,4 @@ def process_signature(  # noqa: D103
 
 
 def setup(app: Any) -> None:  # noqa: D103
-    # TODO: a handful of methods do not seem to trigger the event for
-    #  some reason (possibly @overloads?) - investigate further...
     app.connect("autodoc-process-signature", process_signature)

@@ -10,3 +10,5 @@ venv-dev
 .vscode
 
 metric_forge.egg-info
+
+*.log
