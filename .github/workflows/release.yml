@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.sha || 'main' }}  # Use provided SHA or default to main branch
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,9 +37,10 @@ jobs:
         run: python -m build
 
       - name: Publish to PyPI
+        if: ${{ !github.event.inputs.dry-run }}  # Only publish if not a dry run
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
           pip install twine
           python -m twine upload dist/*
