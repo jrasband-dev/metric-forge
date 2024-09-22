@@ -1,0 +1,38 @@
+_extends: metric-forge:.github/release-drafter-template.yml
+
+name-template: Metric Forge $RESOLVED_VERSION
+tag-template: v$RESOLVED_VERSION
+
+include-labels:
+  - python
+
+version-resolver:
+  major:
+    labels:
+      - breaking
+  minor:
+    labels:
+      - performance
+      - enhancement
+  default: patch
+
+categories:
+  - title: 🏆 Highlights
+    labels: highlight
+  - title: 💥 Breaking changes
+    labels:
+      - breaking
+  - title: ⚠️ Deprecations
+    labels: deprecation
+  - title: 🚀 Performance improvements
+    labels: performance
+  - title: ✨ Enhancements
+    labels: enhancement
+  - title: 🕷 Bug fixes
+    labels: fix
+  - title: 📖 Documentation
+    labels: documentation
+  - title: 📦 Build system
+    labels: build
+  - title: 🛠️ Other improvements
+    labels: internal
