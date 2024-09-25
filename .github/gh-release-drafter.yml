@@ -1,4 +1,4 @@
-_extends: github/release-drafter-template.yml
+_extends: metric-forge:.github/release-drafter-template.yml
 
 name-template: Metric Forge $RESOLVED_VERSION
 tag-template: v$RESOLVED_VERSION
