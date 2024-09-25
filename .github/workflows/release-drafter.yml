@@ -22,8 +22,8 @@ jobs:
       - name: Draft Release
         uses: release-drafter/release-drafter@v6
         with:
-          config-name: release-drafter-template.yml
+          config-name: gh-release-drafter.yml
           commitish: ${{ inputs.sha || github.sha }}
-          disable-autolabeler: false
+          disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
