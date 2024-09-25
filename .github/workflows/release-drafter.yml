@@ -22,7 +22,7 @@ jobs:
       - name: Draft Release
         uses: release-drafter/release-drafter@v6
         with:
-          config-name: gh-release-drafter.yml
+          config-name: metric-forge:.github/release-drafter-template.yml
           commitish: ${{ inputs.sha || github.sha }}
           disable-autolabeler: false
         env:
