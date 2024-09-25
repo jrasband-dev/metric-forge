@@ -24,6 +24,6 @@ jobs:
         with:
           config-name: gh-release-drafter.yml
           commitish: ${{ inputs.sha || github.sha }}
-          disable-autolabeler: true
+          disable-autolabeler: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
