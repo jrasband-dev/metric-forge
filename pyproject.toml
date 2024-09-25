@@ -17,8 +17,9 @@ dependencies = [
 [project.urls]
 "Documentation" = "https://docs.metric-forge.com"
 "Source" = "https://github.com/jrasband-dev/metric-forge"
-"Tracker" = "https://github.com/jrasband-dev/metric-forge/issues"
 "Changelog" = "https://github.com/jrasband-dev/metric-forge/releases"
+"Tracker" = "https://github.com/jrasband-dev/metric-forge/issues"
+
 "Contributors" = "https://github.com/jrasband-dev/metric-forge/graphs/contributors"
 "Repository Stats" = "https://github.com/jrasband-dev/metric-forge/pulse"
 "Download Stats" = "https://pypistats.org/packages/metric-forge"
