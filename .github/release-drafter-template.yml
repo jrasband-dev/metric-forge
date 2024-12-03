@@ -4,40 +4,35 @@ exclude-labels:
 
 change-template: '- $TITLE (#$NUMBER)'
 change-title-escapes: '\<*_&'
-replacers:
-  # Remove conventional commits from titles
-  - search: '/- (build|chore|ci|depr|docs|feat|fix|perf|refactor|release|test)(\(.*\))?(\!)?\: /g'
-    replace: '- '
 
 autolabeler:
   - label: breaking
     title:
-      # Example: feat!: ...
-      - '/^(build|chore|ci|depr|docs|feat|fix|perf|refactor|release|test)(\(.*\))?\!\: /'
+      - '^(build|chore|ci|depr|docs|feat|fix|perf|refactor|release|test)(\(.*\))?\!\: '
   - label: build
     title:
-      - '/^build/'
+      - '^build'
   - label: internal
     title:
-      - '/^(chore|ci|refactor|test)/'
+      - '^(chore|ci|refactor|test)'
   - label: deprecation
     title:
-      - '/^depr/'
+      - '^depr'
   - label: documentation
     title:
-      - '/^docs/'
+      - '^docs'
   - label: enhancement
     title:
-      - '/^feat/'
+      - '^feat'
   - label: fix
     title:
-      - '/^fix/'
+      - '^fix'
   - label: performance
     title:
-      - '/^perf/'
+      - '^perf'
   - label: release
     title:
-      - '/^release/'
+      - '^release'
 
 template: |
   $CHANGES

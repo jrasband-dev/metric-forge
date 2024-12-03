@@ -36,7 +36,7 @@ sys.path.insert(0, str(Path("../..").resolve()))
 project = 'Metric Forge'
 copyright = '2024, Jayden Rasband'
 author = 'Jayden Rasband'
-release = '0.3.0'
+release = '0.5.0'
 
 # -- General configuration ---------------------------------------------------
 

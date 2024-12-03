@@ -1,20 +1,27 @@
 name: Build and Publish to PyPI
 
 on:
-  push:
-    tags:
-        - '*.*.*'  # Trigger only when a tag with format X.X.X is pushed to main
-    branches:
-      - main  # Trigger on pushes to the 'main' branch
+  workflow_dispatch:
+    inputs:
+      # Latest commit to include with the release. If omitted, use the latest commit on the main branch.
+      sha:
+        description: Commit SHA
+        type: string
+      # Create the sdist and build the wheels, but do not publish to PyPI / GitHub.
+      dry-run:
+        description: Dry run
+        type: boolean
+        default: false
 
 jobs:
   build:
-    if: startsWith(github.ref, 'refs/tags/') && github.ref_name != 'main'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.sha || 'main' }}  # Use provided SHA or default to main branch
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -30,6 +37,7 @@ jobs:
         run: python -m build
 
       - name: Publish to PyPI
+        if: ${{ !github.event.inputs.dry-run }}  # Only publish if not a dry run
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
