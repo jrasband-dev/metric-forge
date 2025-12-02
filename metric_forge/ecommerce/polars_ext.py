@@ -52,6 +52,7 @@ class Ecommerce_Polars:
         └─────────────────────┴───────────────┴───────────────────────────┘
         """
         cost_expr = pl.col(cost_column)
+        print(cost_expr)
         customers_expr = pl.col(customers_column)
         return pl.when(customers_expr == 0).then(0.0).otherwise(cost_expr / customers_expr).alias('customer_acquisition_cost')
 
